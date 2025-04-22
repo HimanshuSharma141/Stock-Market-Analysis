@@ -1,5 +1,5 @@
 from django.apps import AppConfig
 
 
-class VisualtisationConfig(AppConfig):
-    name = 'Visualtisation'
+class VisualisationConfig(AppConfig):
+    name = 'Visualisation'

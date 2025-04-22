@@ -1,15 +1,15 @@
 from elasticsearch_dsl.connections import connections
-from elasticsearch_dsl import DocType, Text, Date, Search
+from elasticsearch_dsl import Document, Text, Date, Search
 from elasticsearch.helpers import bulk
 from elasticsearch import Elasticsearch
 from elasticsearch_dsl import Q
 from . import models
 
 # Create a connection to ElasticSearch
-connections.create_connection()
+connections.create_connection(hosts=['http://localhost:9200'])
 
 # ElasticSearch "model" mapping out what fields to index
-class CompanyIndex(DocType):
+class CompanyIndex(Document):
     id = Text()
     compnumber = Text()
     ticker = Text()
